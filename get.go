@@ -14,7 +14,7 @@ func (s sessionBackend) GetLoginUser(http_request any) (user *model.User, err st
 	}
 
 	if r == nil {
-		return nil, "error GetLoginUser. parámetro *http.Request no en enviado en authbackend"
+		return nil, "error GetLoginUser. parámetro *http.Request no en enviado en sessionbackend"
 	}
 
 	// if !s.production_mode {

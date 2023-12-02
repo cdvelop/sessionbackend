@@ -1,12 +1,22 @@
 package sessionbackend
 
-import "github.com/cdvelop/model"
+import (
+	"github.com/cdvelop/model"
+	"github.com/cdvelop/sessionhandler"
+)
 
-func Add(h *model.Handlers) (s *sessionBackend, err string) {
+func AddAuthAdapter(h *model.Handlers) (b *sessionBackend, err string) {
 
-	s = &sessionBackend{}
+	s, err := sessionhandler.Add(h)
+	if err != "" {
+		return nil, err
+	}
 
-	h.AuthAdapter = s
+	b = &sessionBackend{
+		Session: s,
+	}
 
-	return s, ""
+	h.AuthAdapter = b
+
+	return b, ""
 }
