@@ -5,9 +5,9 @@ import (
 	"github.com/cdvelop/sessionhandler"
 )
 
-func AddAuthAdapter(h *model.Handlers) (b *sessionBackend, err string) {
+func AddAuthAdapter(h *model.Handlers, c sessionhandler.Config) (b *sessionBackend, err string) {
 
-	s, err := sessionhandler.Add(h)
+	s, err := sessionhandler.Add(h, c)
 	if err != "" {
 		return nil, err
 	}
