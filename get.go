@@ -6,7 +6,7 @@ import (
 	"github.com/cdvelop/model"
 )
 
-func (s sessionBackend) GetLoginUser(http_request any) (user *model.User, err string) {
+func (s sessionBackend) BackendCheckUser(http_request any) (user *model.User, err string) {
 	var r *http.Request
 
 	if rq, ok := http_request.(*http.Request); ok {
@@ -14,7 +14,7 @@ func (s sessionBackend) GetLoginUser(http_request any) (user *model.User, err st
 	}
 
 	if r == nil {
-		return nil, "error GetLoginUser. parámetro *http.Request no en enviado en sessionbackend"
+		return nil, "error BackendCheckUser. parámetro *http.Request no en enviado en sessionbackend"
 	}
 
 	// if !s.production_mode {

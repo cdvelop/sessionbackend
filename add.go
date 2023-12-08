@@ -16,7 +16,7 @@ func AddAuthAdapter(h *model.Handlers, c sessionhandler.Config) (b *sessionBacke
 		Session: s,
 	}
 
-	h.AuthAdapter = b
+	h.AuthBackendAdapter = b
 
 	return b, ""
 }
