@@ -16,7 +16,7 @@ require (
 	github.com/cdvelop/gookie v0.0.2
 	github.com/cdvelop/object v0.0.43 // indirect
 	github.com/cdvelop/strings v0.0.8 // indirect
-	github.com/cdvelop/token v0.0.4
+	github.com/cdvelop/token v0.0.5
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	golang.org/x/oauth2 v0.15.0
 )
