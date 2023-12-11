@@ -13,16 +13,10 @@ require (
 )
 
 require (
-	github.com/cdvelop/gookie v0.0.1
+	github.com/cdvelop/gookie v0.0.2
 	github.com/cdvelop/object v0.0.42 // indirect
 	github.com/cdvelop/strings v0.0.8 // indirect
 	github.com/cdvelop/token v0.0.3
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	golang.org/x/oauth2 v0.15.0
 )
-
-replace github.com/cdvelop/model => ../model
-
-replace github.com/cdvelop/sessionhandler => ../sessionhandler
-
-replace github.com/cdvelop/gookie => ../gookie
