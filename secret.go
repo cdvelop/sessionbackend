@@ -2,7 +2,7 @@ package sessionbackend
 
 import "github.com/cdvelop/token"
 
-const secret_key_signing = ""
+var secret_key_signing = ""
 
 func AddPrivateSecretKeySigning() map[string]string {
 	return map[string]string{
