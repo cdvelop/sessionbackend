@@ -1,7 +1,7 @@
 package sessionbackend
 
 import (
-	"fmt"
+	"net/http"
 
 	"github.com/cdvelop/model"
 	"github.com/cdvelop/sessionhandler"
@@ -14,6 +14,16 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 	data_db, err := s.Checking(u, params)
 	if err != "" {
 		return this + err
+	}
+
+	var w http.ResponseWriter
+
+	if rw, ok := u.W.(http.ResponseWriter); ok {
+		w = rw
+	}
+
+	if w == nil {
+		return this + "parámetro http.ResponseWriter incorrecto"
 	}
 
 	// 1- CREAMOS EL OBJETO USUARIO CON SU TOKEN
@@ -39,13 +49,16 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 		return this + err
 	}
 
-	fmt.Println("3- CIFRAMOS LA DATA DEL USUARIO:")
+	// fmt.Println("3- CIFRAMOS LA DATA DEL USUARIO.")
 	session_encode, err := s.CipherAdapter.Encrypt(encode_user)
 	if err != "" {
 		return this + err
 	}
 
-	fmt.Println("4- CREAMOS EL OBJETO SESIÓN DEL LADO DEL CLIENTE")
+	// fmt.Println("4- CREAMOS LA COOKIE DE SESSION")
+	s.Gookie.Set(session_encode, w)
+
+	// fmt.Println("5- CREAMOS EL OBJETO SESIÓN DEL LADO DEL CLIENTE")
 
 	new_session := sessionhandler.SessionStore{
 		Id_session:     new_user.Id,
@@ -53,13 +66,13 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 		Session_encode: session_encode,
 	}
 
-	//5- CONVERTIMOS A JSON LA SESIÓN
+	//6- CONVERTIMOS A JSON LA SESIÓN
 	encode_session, err := s.EncodeStruct(new_session)
 	if err != "" {
 		return this + err
 	}
 
-	//6- CREAMOS UN NUEVO MAPA CON LA NUEVA SALIDA DE INFORMACIÓN
+	//7- CREAMOS UN NUEVO MAPA CON LA NUEVA SALIDA DE INFORMACIÓN
 	response := map[string]string{
 		"session": string(encode_session),
 	}
@@ -73,7 +86,7 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 	}
 	response["boot"] = out
 
-	//7- REMPLAZAMOS EL PRIMER ELEMENTO CON LA NUEVA INFORMACIÓN
+	//8- REMPLAZAMOS EL PRIMER ELEMENTO CON LA NUEVA INFORMACIÓN
 	params[0] = response
 
 	// fmt.Println("DATA ENVIADA:", params)

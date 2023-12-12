@@ -2,9 +2,9 @@ module github.com/cdvelop/sessionbackend
 
 go 1.20
 
-require github.com/cdvelop/model v0.0.81
+require github.com/cdvelop/model v0.0.82
 
-require github.com/cdvelop/sessionhandler v0.0.8
+require github.com/cdvelop/sessionhandler v0.0.9
 
 require (
 	github.com/golang/protobuf v1.5.3 // indirect

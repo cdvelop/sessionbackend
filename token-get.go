@@ -1,51 +1,12 @@
 package sessionbackend
 
 import (
-	"fmt"
 	"net/http"
 	"time"
 
-	"github.com/cdvelop/model"
 	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/oauth2"
 )
-
-func (s sessionBackend) BackendCheckUser(http_request any) (user *model.User, err string) {
-	const this = "BackendCheckUser error "
-	var r *http.Request
-
-	if rq, ok := http_request.(*http.Request); ok {
-		r = rq
-	}
-
-	if r == nil {
-		return nil, this + "parámetro *http.Request incorrecto"
-	}
-
-	// 1
-	oauth2_token, err := s.getTokenFromCookie(r)
-	if err != "" {
-		return nil, this + err
-	}
-
-	fmt.Println("oauth2_token:", oauth2_token)
-
-	// if !s.production_mode {
-
-	// 	user = &model.User{
-	// 		Token:          "123",
-	// 		Id:             "1635572582072481400",
-	// 		Ip:             "172.0.0.1", //"172.0.0.41"
-	// 		Name:           "drs. karla acero",
-	// 		Area:           "s",
-	// 		AccessLevel:    "",
-	// 		LastConnection: "",
-	// 	}
-	// 	return user, ""
-	// }
-
-	return nil, "usuario no registrado"
-}
 
 func (s sessionBackend) getTokenFromCookie(r *http.Request) (out *oauth2.Token, err string) {
 
