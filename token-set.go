@@ -1,17 +1,17 @@
 package sessionbackend
 
 import (
+	"fmt"
 	"net/http"
 
-	"github.com/cdvelop/model"
 	"github.com/dgrijalva/jwt-go"
 )
 
-func (s *sessionBackend) setTokenInCookie(user *model.User, r *http.Request, w http.ResponseWriter) (err string) {
+func (s *sessionBackend) setTokenInCookie(session_encode string, w http.ResponseWriter) (err string) {
 
 	//1- Genera un token JWT con la información del usuario
 	jwtToken := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		s.Gookie.Name: user,
+		s.Gookie.Name: session_encode,
 	})
 
 	//2- Firma el token con una clave secreta
@@ -20,7 +20,9 @@ func (s *sessionBackend) setTokenInCookie(user *model.User, r *http.Request, w h
 		return "error al generar el token: " + er.Error()
 	}
 
-	//3- setear la cookie
+	fmt.Println("tokenString:", tokenString)
+
+	fmt.Println("3- setear la cookie:")
 	s.Gookie.Set(tokenString, w)
 
 	return ""

@@ -1,6 +1,8 @@
 package sessionbackend
 
 import (
+	"fmt"
+
 	"github.com/cdvelop/model"
 	"github.com/cdvelop/sessionhandler"
 	"github.com/cdvelop/token"
@@ -37,13 +39,14 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 		return this + err
 	}
 
-	//3- CIFRAMOS LA DATA DEL USUARIO
+	fmt.Println("3- CIFRAMOS LA DATA DEL USUARIO:")
 	session_encode, err := s.CipherAdapter.Encrypt(encode_user)
 	if err != "" {
 		return this + err
 	}
 
-	//4- CREAMOS EL OBJETO SESIÓN DEL LADO DEL CLIENTE
+	fmt.Println("4- CREAMOS EL OBJETO SESIÓN DEL LADO DEL CLIENTE")
+
 	new_session := sessionhandler.SessionStore{
 		Id_session:     new_user.Id,
 		Session_status: "in",
