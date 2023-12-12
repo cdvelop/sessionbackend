@@ -4,7 +4,7 @@ go 1.20
 
 require github.com/cdvelop/model v0.0.81
 
-require github.com/cdvelop/sessionhandler v0.0.7
+require github.com/cdvelop/sessionhandler v0.0.8
 
 require (
 	github.com/golang/protobuf v1.5.3 // indirect
