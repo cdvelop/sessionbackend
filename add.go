@@ -24,6 +24,7 @@ func AddAuthAdapter(h *model.Handlers, sc *sessionhandler.Config) (err string) {
 	}
 
 	h.AuthBackendAdapter = sb
+	h.BackendBootDataUser = sb
 
 	sh.Form.BackHandler.CreateApi = sb
 	sh.Form.BackHandler.DeleteApi = sb

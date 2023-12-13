@@ -79,12 +79,7 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 
 	// fmt.Println("\nnew_user:", new_user)
 
-	out, err := s.BackendLoadBootData(&new_user)
-	if err != "" {
-
-		return this + err
-	}
-	response["boot"] = out
+	response["boot"] = s.BackendLoadBootData(&new_user).JsonBootActions
 
 	//8- REMPLAZAMOS EL PRIMER ELEMENTO CON LA NUEVA INFORMACIÓN
 	params[0] = response
