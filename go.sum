@@ -1,10 +1,10 @@
-github.com/cdvelop/gookie v0.0.2 h1:vPswdHzP8/dvhsZX5TIczgG3Zb4KZuhHZFqb6CigmUg=
-github.com/cdvelop/gookie v0.0.2/go.mod h1:os8M4nUUy1o5q7bXrR0XptI/UWNh3NXnVJUtPMTpik0=
-github.com/cdvelop/input v0.0.63 h1:yW8A8KHAOu30Vc8GA5OglbtaYz6eSWMTFzOYGtRNPDk=
-github.com/cdvelop/model v0.0.88 h1:Wetl91d6J5t3YKW3hy8HBcjIpG4WZZLA0B9NUAi1a44=
-github.com/cdvelop/model v0.0.88/go.mod h1:cYJNxbv1WV/aDgiVPV9VXs8LrbF8+0nU+X+KfSevyzw=
-github.com/cdvelop/object v0.0.47 h1:PPlFoG08PmloULf/TtadbgTjgDWyp9MyQl7P8OOIdnw=
-github.com/cdvelop/object v0.0.47/go.mod h1:RgCG2oSEK9W1cJMi1XGMw8UDZPPgKdeKqy/VCZiExV8=
+github.com/cdvelop/gookie v0.0.3 h1:85V9+kmxdWrSYkSCPRJ19ALMlVOwpBq2Btr3E3JkeWU=
+github.com/cdvelop/gookie v0.0.3/go.mod h1:BPZMwwSSrKW+3oGfse5okpMyNEChBR0om03ST7IHccU=
+github.com/cdvelop/input v0.0.64 h1:ThowW6WeqEDNjDgjVJ72TrHQ8swcacylY06yTgzCDTs=
+github.com/cdvelop/model v0.0.89 h1:VgX3fjwQLNZUHcsSp7fDy/cVjP/H5HEE69U1K5W5srs=
+github.com/cdvelop/model v0.0.89/go.mod h1:cYJNxbv1WV/aDgiVPV9VXs8LrbF8+0nU+X+KfSevyzw=
+github.com/cdvelop/object v0.0.48 h1:0zp4k7ZW+DB3X5AtWnmCW9PNOm0/vHhF8T7Wla1TWWw=
+github.com/cdvelop/object v0.0.48/go.mod h1:zpzxPxUlBlt/NG4UW8G3iW9f6VcsWCCXTaoOTkArimg=
 github.com/cdvelop/sessionhandler v0.0.12 h1:yakiZ6Uj5nMTuS8MmZ6Qx+4SOBFjyAwQnyBTfyQJv3s=
 github.com/cdvelop/sessionhandler v0.0.12/go.mod h1:2hL8eAi3lR5OxGSGIPVOLvuYIksGxr8tRGcUOC0ADXM=
 github.com/cdvelop/strings v0.0.9 h1:yDh2msl3EQja0dHw+oOHfD9ymQMa50KakKTkjsXDnvw=
