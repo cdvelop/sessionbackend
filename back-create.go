@@ -30,6 +30,8 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 
 	key_area := data_db[s.FieldArea]
 
+	date, hour := s.DateToDayHour(true)
+
 	new_user := model.User{
 		Token:          token.BuildUniqueKey(16),
 		Id:             data_db[s.FieldID],
@@ -38,7 +40,7 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 		Area:           key_area,
 		AreaName:       s.Config.AreasName[key_area],
 		AccessLevel:    data_db[s.FieldAccessLevel],
-		LastConnection: s.DateToDayHour(),
+		LastConnection: date + " " + hour,
 	}
 
 	// fmt.Println("\nUSUARIO:", new_user)

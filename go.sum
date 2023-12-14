@@ -1,8 +1,8 @@
 github.com/cdvelop/gookie v0.0.3 h1:85V9+kmxdWrSYkSCPRJ19ALMlVOwpBq2Btr3E3JkeWU=
 github.com/cdvelop/gookie v0.0.3/go.mod h1:BPZMwwSSrKW+3oGfse5okpMyNEChBR0om03ST7IHccU=
 github.com/cdvelop/input v0.0.66 h1:HhXcoJFtogD2g+f0SNpoD88UVIPRrMnlgbAKWnY55jQ=
-github.com/cdvelop/model v0.0.91 h1:COeuO3IGSBVpobtfJ5E+pLnPLP3kpEl/uK+eecg2FoY=
-github.com/cdvelop/model v0.0.91/go.mod h1:cYJNxbv1WV/aDgiVPV9VXs8LrbF8+0nU+X+KfSevyzw=
+github.com/cdvelop/model v0.0.92 h1:LvqLUe4g5g+/u3aJc5TZEaQwo+L/9lB2oCaRSBfY42s=
+github.com/cdvelop/model v0.0.92/go.mod h1:cYJNxbv1WV/aDgiVPV9VXs8LrbF8+0nU+X+KfSevyzw=
 github.com/cdvelop/object v0.0.50 h1:xPceZkZquzkag8bZQgy/NKXXC9N8ST4Zc6Py6938UQ4=
 github.com/cdvelop/object v0.0.50/go.mod h1:SZSzswn9lhyz8ATFse7LI6P2bsB3Ivz/mnzL7dhfPVg=
 github.com/cdvelop/sessionhandler v0.0.14 h1:4jey4/xj9piJACwpkKphNcSQusgwJ7AZckryOlAVOQk=

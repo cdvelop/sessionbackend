@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/cdvelop/gookie v0.0.3
-	github.com/cdvelop/model v0.0.91
+	github.com/cdvelop/model v0.0.92
 	github.com/cdvelop/sessionhandler v0.0.14
 	github.com/cdvelop/token v0.0.5
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
