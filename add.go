@@ -6,7 +6,7 @@ import (
 	"github.com/cdvelop/sessionhandler"
 )
 
-func AddAuthAdapter(h *model.Handlers, sc *sessionhandler.Config) (err string) {
+func AddAuthAdapter(h *model.MainHandler, sc *sessionhandler.Config) (err string) {
 
 	sh, err := sessionhandler.Add(h, sc)
 	if err != "" {
@@ -23,11 +23,17 @@ func AddAuthAdapter(h *model.Handlers, sc *sessionhandler.Config) (err string) {
 		},
 	}
 
-	h.AuthBackendAdapter = sb
+	h.SessionBackendAdapter = sb
 	h.BackendBootDataUser = sb
 
 	sh.Form.BackHandler.CreateApi = sb
 	sh.Form.BackHandler.DeleteApi = sb
 
-	return ""
+	h.CreateTablesInDB([]*model.Object{sh.Object}, func(err string) {
+		if err != "" {
+			h.Log("AddAuthAdapter sessionbackend " + err)
+		}
+	})
+
+	return
 }

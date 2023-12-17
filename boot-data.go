@@ -8,7 +8,7 @@ func (c sessionBackend) BackendLoadBootData(u *model.User) (out model.BootPageDa
 	const t = "BackendLoadBootData error :"
 
 	out = model.BootPageData{
-		JsonBootActions: "none",
+		JsonBootActions: "none", // al colocarlo vació al obtenerlo en el frontend arroja caracteres extraños
 	}
 
 	if u == nil {
@@ -17,7 +17,7 @@ func (c sessionBackend) BackendLoadBootData(u *model.User) (out model.BootPageDa
 	}
 
 	var responses []model.Response
-	for _, o := range c.GetObjects() {
+	for _, o := range c.GetAllObjectsFromMainHandler() {
 
 		// fmt.Println("BackHandler.BootResponse", o.ObjectName)
 		// fmt.Println("Estado Back:", o.BackHandler.BootResponse)

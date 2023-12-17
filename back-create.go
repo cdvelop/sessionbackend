@@ -1,19 +1,19 @@
 package sessionbackend
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/cdvelop/model"
-	"github.com/cdvelop/sessionhandler"
 	"github.com/cdvelop/token"
 )
 
 func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err string) {
-	const this = "Create session error "
+	const e = "Create session "
 
 	data_db, err := s.Checking(u, params)
 	if err != "" {
-		return this + err
+		return e + err
 	}
 
 	var w http.ResponseWriter
@@ -23,8 +23,10 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 	}
 
 	if w == nil {
-		return this + "parámetro http.ResponseWriter incorrecto"
+		return e + "parámetro http.ResponseWriter incorrecto"
 	}
+
+	// 0-
 
 	// 1- CREAMOS EL OBJETO USUARIO CON SU TOKEN
 
@@ -43,50 +45,54 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 		LastConnection: date + " " + hour,
 	}
 
-	// fmt.Println("\nUSUARIO:", new_user)
+	fmt.Println("\nUSUARIO:", new_user)
 
 	// 2- CONVERTIMOS LA DATA EN BYTES JSON
 	encode_user, err := s.EncodeStruct(new_user)
 	if err != "" {
-		return this + err
+		return e + err
 	}
 
 	// fmt.Println("3- CIFRAMOS LA DATA DEL USUARIO.")
 	session_encode, err := s.CipherAdapter.Encrypt(encode_user)
 	if err != "" {
-		return this + err
+		return e + err
 	}
 
 	// fmt.Println("4- CREAMOS LA COOKIE DE SESSION")
 	s.Gookie.Set(session_encode, w)
 
-	// fmt.Println("5- CREAMOS EL OBJETO SESIÓN DEL LADO DEL CLIENTE")
-
-	new_session := sessionhandler.SessionStore{
-		Id_session:     new_user.Id,
-		Session_status: "in",
-		Session_encode: session_encode,
-	}
-
-	//6- CONVERTIMOS A JSON LA SESIÓN
-	encode_session, err := s.EncodeStruct(new_session)
+	session_number, its_new_number, err := s.getSessionNumber(new_user.Id)
 	if err != "" {
-		return this + err
+		return e + err
 	}
 
-	//7- CREAMOS UN NUEVO MAPA CON LA NUEVA SALIDA DE INFORMACIÓN
+	// fmt.Println("5- CREAMOS EL OBJETO SESIÓN DEL LADO DEL CLIENTE")
 	response := map[string]string{
-		"session": string(encode_session),
+		s.Id_session:     new_user.Id,
+		s.Session_number: session_number,
+		s.Session_encode: session_encode,
+	}
+
+	// ALMACENAMOS LA SESIÓN EN EL BACKEND SOLO SI ES UN NUMERO NUEVO
+	if its_new_number {
+		err = s.CreateObjectsInDB(s.Table, false, response)
+		if err != "" {
+			return e + err
+		}
 	}
 
 	// fmt.Println("\nnew_user:", new_user)
 
-	response["boot"] = s.BackendLoadBootData(&new_user).JsonBootActions
+	//7- AGREGAMOS DATA DE ARRANQUE
+	boot_data := s.BackendLoadBootData(&new_user).JsonBootActions
+	// fmt.Println("boot_data:", boot_data)
+	if boot_data != "none" {
+		response["boot"] = boot_data
+	}
 
 	//8- REMPLAZAMOS EL PRIMER ELEMENTO CON LA NUEVA INFORMACIÓN
 	params[0] = response
-
-	// fmt.Println("DATA ENVIADA:", params)
 
 	return
 }
