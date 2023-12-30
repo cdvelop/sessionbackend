@@ -32,7 +32,10 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 
 	key_area := data_db[s.FieldArea]
 
-	date, hour := s.DateToDayHour(true)
+	date, hour := s.DateToDayHour(&model.DateFormat{
+		LeftDay:     false,
+		WithSeconds: true,
+	})
 
 	new_user := model.User{
 		Token:          token.BuildUniqueKey(16),
