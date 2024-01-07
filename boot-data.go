@@ -17,7 +17,7 @@ func (c sessionBackend) BackendLoadBootData(u *model.User) (out model.BootPageDa
 	}
 
 	var responses []model.Response
-	for _, o := range c.GetAllObjects() {
+	for _, o := range c.GetAllObjects(false) {
 
 		// fmt.Println("BackHandler.BootResponse", o.ObjectName)
 		// fmt.Println("Estado Back:", o.BackHandler.BootResponse)
