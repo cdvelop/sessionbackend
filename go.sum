@@ -1,8 +1,8 @@
 github.com/cdvelop/gookie v0.0.14 h1:kfSRkcwL5E/VzSE3SSLaFNC+CJYrJaYSMzUSKDr373s=
 github.com/cdvelop/gookie v0.0.14/go.mod h1:eTO1jtY2OdCaVFK6FlUH/OsuiKY2SB5Gyb9okCW/XAQ=
 github.com/cdvelop/input v0.0.83 h1:GNtOgYFwS/PVjePEDGGiiNP9jn/bT2K80oHQ0ea2jK4=
-github.com/cdvelop/object v0.0.71 h1:SypnFZJ49ZKwEk5TdU0xx0qxQ9FxL7+I76FLeOk5CCQ=
-github.com/cdvelop/object v0.0.71/go.mod h1:Q9+ppIdisELzJwpY279AQ0Vn5rUceooRoM3lX8le0s4=
+github.com/cdvelop/object v0.0.72 h1:QbyXkny+EqFPMZoDUSjCT0wpUfiG//g5mPHK8C/w7Hw=
+github.com/cdvelop/object v0.0.72/go.mod h1:mDJNuU3pHAV+sr4hraRppd3OLlOnt5rlfUe5czp4Ihs=
 github.com/cdvelop/strings v0.0.9 h1:yDh2msl3EQja0dHw+oOHfD9ymQMa50KakKTkjsXDnvw=
 github.com/cdvelop/strings v0.0.9/go.mod h1:zNexDeXHRETbMmlmNThQeM7ksRsvzrphsCfwuSxaURk=
 github.com/cdvelop/structs v0.0.1 h1:9H4JUJ/dK1zaUOpIgay4xZpP3O/Jh991nErccKknKZ8=
@@ -26,8 +26,8 @@ golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4/go.mod h1:jJ57K6gSWd91
 golang.org/x/net v0.0.0-20190620200207-3b0461eec859/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/net v0.0.0-20210226172049-e18ecbb05110/go.mod h1:m0MpNAwzfU5UDzcl9v0D8zg8gWTRqZa9RBIspLL5mdg=
 golang.org/x/net v0.0.0-20220722155237-a158d28d115b/go.mod h1:XRhObCWvk6IyKnWLug+ECip1KBveYUHfp+8e9klMJ9c=
-golang.org/x/oauth2 v0.15.0 h1:s8pnnxNVzjWyrvYdFUQq5llS1PX2zhPXmccZv99h7uQ=
-golang.org/x/oauth2 v0.15.0/go.mod h1:q48ptWNTY5XWf+JNten23lcvHpLJ0ZSxF5ttTHKVCAM=
+golang.org/x/oauth2 v0.16.0 h1:aDkGMBSYxElaoP81NpoUoz2oo2R2wHdZpGToUxfyQrQ=
+golang.org/x/oauth2 v0.16.0/go.mod h1:hqZ+0LWXsiVoZpeld6jVt06P3adbS2Uu911W1SsJv2o=
 golang.org/x/sync v0.0.0-20190423024810-112230192c58/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
 golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
