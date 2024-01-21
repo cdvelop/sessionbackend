@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/cdvelop/model"
+	"github.com/cdvelop/timetools"
 	"github.com/cdvelop/token"
 )
 
@@ -32,7 +33,7 @@ func (s sessionBackend) Create(u *model.User, params ...map[string]string) (err 
 
 	key_area := data_db[s.FieldArea]
 
-	date, hour := s.DateToDayHour(&model.DateFormat{
+	date, hour := s.DateToDayHour(&timetools.DateFormat{
 		LeftDay:     false,
 		WithSeconds: true,
 	})

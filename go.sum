@@ -1,13 +1,14 @@
 github.com/cdvelop/gookie v0.0.14 h1:kfSRkcwL5E/VzSE3SSLaFNC+CJYrJaYSMzUSKDr373s=
 github.com/cdvelop/gookie v0.0.14/go.mod h1:eTO1jtY2OdCaVFK6FlUH/OsuiKY2SB5Gyb9okCW/XAQ=
 github.com/cdvelop/input v0.0.83 h1:GNtOgYFwS/PVjePEDGGiiNP9jn/bT2K80oHQ0ea2jK4=
-github.com/cdvelop/object v0.0.72 h1:QbyXkny+EqFPMZoDUSjCT0wpUfiG//g5mPHK8C/w7Hw=
-github.com/cdvelop/object v0.0.72/go.mod h1:mDJNuU3pHAV+sr4hraRppd3OLlOnt5rlfUe5czp4Ihs=
+github.com/cdvelop/object v0.0.73 h1:8TspxUF69BaEKRaz7w3QFcUvStJOUsJSwDtuxT4sHeU=
+github.com/cdvelop/object v0.0.73/go.mod h1:6LTAYyk9I8aoXdj/vaP3cex592/AbR3sWtKJ4ZVTuj4=
 github.com/cdvelop/strings v0.0.9 h1:yDh2msl3EQja0dHw+oOHfD9ymQMa50KakKTkjsXDnvw=
 github.com/cdvelop/strings v0.0.9/go.mod h1:zNexDeXHRETbMmlmNThQeM7ksRsvzrphsCfwuSxaURk=
 github.com/cdvelop/structs v0.0.1 h1:9H4JUJ/dK1zaUOpIgay4xZpP3O/Jh991nErccKknKZ8=
 github.com/cdvelop/structs v0.0.1/go.mod h1:dvym7DUgaMRqhdcDTgCQNkbuhr+HqfwdaDMeZTmIWEI=
-github.com/cdvelop/timetools v0.0.34 h1:i0xGl3TWul20Mjfo9Al6syclVmhQcitQRsKWdETQkx4=
+github.com/cdvelop/timetools v0.0.39 h1:0uSwUnIzPvHqalcdETlfXLyIlxIhChfkXlCwW0WlR9U=
+github.com/cdvelop/timetools v0.0.39/go.mod h1:FLXt6dvkY4x3rjgRYX7J5XK2H6aHIdxV+fBA+Apj7J8=
 github.com/cdvelop/token v0.0.5 h1:UzmT8OK2B6B/mBeN65P6YovHvJ4rXvq6UFomUElELkM=
 github.com/cdvelop/token v0.0.5/go.mod h1:ANC5a0EWBo/iXNxSAY6tecAcv9tPHv9/nzvK7cuzAhg=
 github.com/cdvelop/unixid v0.0.49 h1:K9W4VDZF+SvNsYCpSdcf7jFmfv1Z6yTDyRraxqmludQ=
