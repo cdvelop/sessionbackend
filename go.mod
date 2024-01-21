@@ -13,7 +13,7 @@ require (
 )
 
 require (
-	github.com/cdvelop/object v0.0.74 // indirect
+	github.com/cdvelop/object v0.0.75 // indirect
 	github.com/cdvelop/strings v0.0.9 // indirect
 	github.com/cdvelop/structs v0.0.1 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
