@@ -6,7 +6,7 @@ require (
 	github.com/cdvelop/gookie v0.0.14
 	github.com/cdvelop/model v0.0.119
 	github.com/cdvelop/sessionhandler v0.0.24
-	github.com/cdvelop/timetools v0.0.40
+	github.com/cdvelop/timetools v0.0.41
 	github.com/cdvelop/token v0.0.5
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	golang.org/x/oauth2 v0.16.0
