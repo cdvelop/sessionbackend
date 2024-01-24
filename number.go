@@ -16,7 +16,7 @@ func (s sessionBackend) getSessionNumber(session_id string) (number string, its_
 
 	const e = "getSessionNumber "
 
-	result, err := s.ReadSyncDataDB(model.ReadParams{FROM_TABLE: s.Table, ORDER_BY: s.Session_number})
+	result, err := s.ReadSyncDataDB(&model.ReadParams{FROM_TABLE: s.Table, ORDER_BY: s.Session_number})
 	if err != "" {
 		err = e + err
 		return

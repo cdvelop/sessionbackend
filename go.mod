@@ -3,17 +3,17 @@ module github.com/cdvelop/sessionbackend
 go 1.20
 
 require (
-	github.com/cdvelop/gookie v0.0.14
-	github.com/cdvelop/model v0.0.119
-	github.com/cdvelop/sessionhandler v0.0.24
-	github.com/cdvelop/timetools v0.0.41
+	github.com/cdvelop/gookie v0.0.15
+	github.com/cdvelop/model v0.0.121
+	github.com/cdvelop/sessionhandler v0.0.25
+	github.com/cdvelop/timetools v0.0.42
 	github.com/cdvelop/token v0.0.5
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	golang.org/x/oauth2 v0.16.0
 )
 
 require (
-	github.com/cdvelop/object v0.0.75 // indirect
+	github.com/cdvelop/object v0.0.77 // indirect
 	github.com/cdvelop/strings v0.0.9 // indirect
 	github.com/cdvelop/structs v0.0.1 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
